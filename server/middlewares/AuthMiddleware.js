@@ -1,5 +1,9 @@
 import jwt from 'jsonwebtoken';
 
+// import '../loadEnv.js'; // Load environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'; // Make sure to use environment variables for your secret
 
 export const verifyToken = (req, res, next) => {

@@ -6,6 +6,10 @@ import validUser from '../middlewares/validUser.js';
 
 const router = express.Router();
 
+// import '../loadEnv.js'; // Load environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+
 // Secret key for JWT (this should be stored in an environment variable)
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 

@@ -4,6 +4,10 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import validUser from '../middlewares/validUser.js';
 
+// import '../loadEnv.js'; // Load environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+
 const router = express.Router();
 const saltRounds = 10;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'; // Use environment variable for secret
