@@ -4,9 +4,16 @@ import cookieParser from 'cookie-parser';
 // Initialize Express
 const app = express();
 
+// Import the loadEnv module to configure dotenv
+// import './loadEnv.js';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const Origin = process.env.ORIGIN
+
 // Middleware to handle CORS
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Your frontend origin
+    res.setHeader('Access-Control-Allow-Origin', Origin); // Your frontend origin
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.setHeader('Access-Control-Allow-Credentials', 'true'); // Allow credentials (cookies)

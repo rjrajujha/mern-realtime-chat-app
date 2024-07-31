@@ -1,5 +1,6 @@
 import app from './app.js';
 import connectDB from './db.js';
+
 // import './loadEnv.js'; // Load environment variables
 import dotenv from 'dotenv';
 dotenv.config();
